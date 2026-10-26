@@ -20,6 +20,27 @@
 </main>
 <script>
 const terms={ch:{name:'Chain',meaning:'Make a chain stitch by yarning over and pulling through the loop on your hook.',uk:'ch'},slst:{name:'Slip stitch',meaning:'Insert your hook, yarn over, and pull through both the stitch and the loop on your hook.',uk:'sl st'},sc:{name:'Single crochet (US)',meaning:'Insert hook into the stitch, yarn over and pull up a loop, yarn over and pull through both loops.',uk:'double crochet'},hdc:{name:'Half double crochet (US)',meaning:'Yarn over, insert hook and pull up a loop, then yarn over and pull through all three loops.',uk:'half treble crochet'},dc:{name:'Double crochet (US)',meaning:'Yarn over, insert hook and pull up a loop, yarn over and pull through two loops, then repeat through the remaining two loops.',uk:'treble crochet'},tr:{name:'Treble crochet (US)',meaning:'Yarn over twice, insert hook and pull up a loop, then work through two loops at a time three times.',uk:'double treble crochet'},dtr:{name:'Double treble crochet (US)',meaning:'A tall stitch made with three yarn overs before inserting the hook, then working through two loops at a time.',uk:'triple treble crochet'},st:{name:'Stitch',meaning:'A single crochet stitch or another stitch specified by your pattern.',uk:'st'},sts:{name:'Stitches',meaning:'More than one stitch.',uk:'sts'},sk:{name:'Skip',meaning:'Leave the next stitch or space unworked.',uk:'sk'},inc:{name:'Increase',meaning:'Work more than one stitch into the same stitch or space, as instructed.',uk:'inc'},dec:{name:'Decrease',meaning:'Combine stitches to reduce the stitch count.',uk:'dec'},rep:{name:'Repeat',meaning:'Work the indicated instructions again.',uk:'rep'},yo:{name:'Yarn over',meaning:'Wrap the yarn over your crochet hook.',uk:'yo'},rnd:{name:'Round',meaning:'A row of stitches worked in a circle or joined round.',uk:'rnd'},RS:{name:'Right side',meaning:'The front or public-facing side of the crochet fabric.',uk:'RS'},WS:{name:'Wrong side',meaning:'The reverse side of the crochet fabric.',uk:'WS'}};
+Object.assign(terms,{
+  slst:{name:'Slip Stitch',meaning:'Insert hook into stitch, yarn over and pull through the stitch and the loop on your hook.',uk:'sl st'},
+  sc:{name:'Single Crochet (US)',meaning:'Insert hook into stitch, yarn over and pull up a loop, yarn over and pull through both loops.',uk:'dc'},
+  hdc:{name:'Half Double Crochet (US)',meaning:'Yarn over, insert hook into stitch, yarn over and pull up a loop, yarn over and pull through all three loops.',uk:'htr'},
+  dc:{name:'Double Crochet (US)',meaning:'Yarn over, insert hook into stitch, yarn over and pull up a loop, yarn over and pull through two loops twice.',uk:'tr'},
+  tr:{name:'Treble Crochet (US)',meaning:'Yarn over twice, insert hook into stitch, yarn over and pull up a loop, then pull through two loops three times.',uk:'dtr'},
+  inc:{name:'Increase',meaning:'Make two or more stitches in the same stitch to increase the stitch count.',uk:'inc'},
+  dec:{name:'Decrease',meaning:'Combine stitches to make fewer stitches in the next row or round.',uk:'dec'},
+  blo:{name:'Back Loop Only',meaning:'Work into only the back loop of each stitch.',uk:'blo'},
+  flo:{name:'Front Loop Only',meaning:'Work into only the front loop of each stitch.',uk:'flo'},
+  sk:{name:'Skip',meaning:'Leave the specified stitch or space unworked.',uk:'sk'},
+  rep:{name:'Repeat',meaning:'Work the specified stitches or instructions again.',uk:'rep'},
+  st:{name:'Stitch',meaning:'A single crochet loop or completed stitch in your work.',uk:'st'},
+  sts:{name:'Stitches',meaning:'More than one stitch.',uk:'sts'},
+  chs:{name:'Chain Stitches',meaning:'A series of chain stitches made with your hook.',uk:'chs'},
+  sp:{name:'Space',meaning:'A gap between stitches or groups of stitches.',uk:'sp'},
+  yo:{name:'Yarn Over',meaning:'Wrap the yarn over your crochet hook.',uk:'yo'},
+  pm:{name:'Place Marker',meaning:'Place a stitch marker in the indicated stitch or space.',uk:'pm'},
+  fo:{name:'Fasten Off',meaning:'Cut the yarn, leaving a tail, and pull the tail through the final loop to secure it.',uk:'fo'}
+});
+
 const usuk={'single crochet':'double crochet','half double crochet':'half treble crochet','double crochet':'treble crochet','treble crochet':'double treble crochet','double treble crochet':'triple treble crochet'};
 function norm(s){return s.trim().toLowerCase().replace(/[.,;:!?]/g,'')}
 function findTerm(q){let k=norm(q);if(terms[k])return [k,terms[k]];for(const [abbr,t] of Object.entries(terms)){if(norm(t.name)===k||norm(t.name.replace(/ \(US\)/,''))===k)return [abbr,t]}return null}
