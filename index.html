@@ -52,5 +52,45 @@ document.getElementById('explainBtn').onclick=()=>{let p=document.getElementById
 const dl=document.getElementById('dictionaryList');for(const [a,t] of Object.entries(terms)){let d=document.createElement('div');d.className='term';let b=document.createElement('strong');b.textContent=a+' — '+t.name;let p=document.createElement('div');p.className='muted';p.textContent=t.meaning;d.append(b,p);dl.appendChild(d)}
 document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('main section').forEach(s=>s.classList.toggle('hidden',s.id!==b.dataset.tab))});
 </script>
+
+<section id="tutorials" style="padding:20px;font-family:Arial,sans-serif;">
+  <h2>🧶 Beginner Crochet Tutorials</h2>
+  <p>Learn to crochet step by step, even if you are a complete beginner!</p>
+
+  <article style="margin:20px 0;padding:15px;border:1px solid #ddd;border-radius:12px;">
+    <h3>1. How to Make a Slip Knot</h3>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Crochet%20slip%20knot.jpg" alt="Crochet slip knot" style="width:100%;max-width:320px;border-radius:8px;">
+    <ol>
+      <li>Make a loop with your yarn.</li>
+      <li>Pull a small loop of yarn through the first loop.</li>
+      <li>Pull the yarn ends gently to tighten the knot.</li>
+      <li>Place the loop on your crochet hook and adjust it so it slides easily.</li>
+    </ol>
+  </article>
+
+  <article style="margin:20px 0;padding:15px;border:1px solid #ddd;border-radius:12px;">
+    <h3>2. How to Make a Chain Stitch</h3>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Crochet_chain_stitch.jpg" alt="Crochet chain stitches" style="width:100%;max-width:320px;border-radius:8px;">
+    <ol>
+      <li>Make a slip knot and place it on your hook.</li>
+      <li>Wrap the yarn over your hook.</li>
+      <li>Pull the yarn through the loop on your hook.</li>
+      <li>Repeat to make a chain of stitches.</li>
+    </ol>
+  </article>
+
+  <article style="margin:20px 0;padding:15px;border:1px solid #ddd;border-radius:12px;">
+    <h3>3. How to Make a Single Crochet (US)</h3>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Single%20crochet.jpg" alt="Single crochet stitch" style="width:100%;max-width:320px;border-radius:8px;">
+    <ol>
+      <li>Insert your hook into the next stitch.</li>
+      <li>Wrap the yarn over your hook and pull up a loop.</li>
+      <li>Wrap the yarn over your hook again.</li>
+      <li>Pull through both loops on your hook.</li>
+    </ol>
+    <p><strong>Remember:</strong> US single crochet is called double crochet in UK terminology.</p>
+  </article>
+</section>
+
 </body>
   </html>
